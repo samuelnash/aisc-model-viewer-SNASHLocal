@@ -19,6 +19,8 @@ module.exports = {
         buckling_i_shaped_beam: './src/buckling-i-shaped-beam/buckling-i-shaped-beam.ts',
         buckling_hss: './src/buckling-hss/buckling-hss.ts',
         buckling_double_angle: './src/buckling-double-angle/buckling-double-angle.ts',
+        //Sculpture Connections
+        full_AISC_sculpture: './src/full-AISC-sculpture/full-AISC-sculpture.ts',
     },
     module: {
         rules: [
@@ -124,6 +126,12 @@ module.exports = {
             template: './src/app.ejs',
             chunks: ['buckling_double_angle']
         }),
+        new HtmlWebpackPlugin({
+            title: 'AISC Steel Sculpture',
+            filename: 'full-AISC-sculpture/index.html',
+            template: './src/app.ejs',
+            chunks: ['full_AISC_sculpture']
+        })
     ],
     output: {
         filename: '[name].bundle.js',
