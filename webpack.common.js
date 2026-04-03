@@ -21,6 +21,7 @@ module.exports = {
         buckling_double_angle: './src/buckling-double-angle/buckling-double-angle.ts',
         //Sculpture Connections
         full_AISC_sculpture: './src/full-AISC-sculpture/full-AISC-sculpture.ts',
+        shear_tab: './src/shear-tab/shear-tab.ts'
     },
     module: {
         rules: [
@@ -131,6 +132,12 @@ module.exports = {
             filename: 'full-AISC-sculpture/index.html',
             template: './src/app.ejs',
             chunks: ['full_AISC_sculpture']
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Shear Tab Connection',
+            filename: 'shear-tab/index.html',
+            template: './src/app.ejs',
+            chunks: ['shear_tab']
         })
     ],
     output: {
